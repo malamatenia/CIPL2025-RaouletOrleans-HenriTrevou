@@ -15,6 +15,60 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="images/face_lettrine.png">
+    <style>
+        /* Constrain all content images to the readable column */
+        .Method img,
+        .abstract img,
+        .stack-vertical img,
+        .stack-vertival img,
+        .pca-figure img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        /* Cap the PCA plot at a sensible width */
+        .pca-figure {
+            width: 100%;
+            max-width: 820px;
+            margin-top: 1.2rem;
+        }
+        /* Keep text and lists within the reading column */
+        .Method ul {
+            width: 100%;
+            max-width: 800px;
+            padding-left: 1.5rem;
+            box-sizing: border-box;
+        }
+        .Method ul li {
+            margin-bottom: 0.65rem;
+            line-height: 1.65;
+            word-wrap: break-word;
+        }
+        .Method p,
+        .abstract p,
+        .para p {
+            max-width: 800px;
+            width: 100%;
+        }
+        .para {
+            width: 100%;
+            max-width: 800px;
+        }
+        .stack-vertival,
+        .stack-vertical {
+            width: 100%;
+            max-width: 800px;
+        }
+        .stack-vertival p,
+        .stack-vertical p,
+        .pca-figure p {
+            font-size: 0.9rem;
+            color: #444;
+            margin-top: 0.4rem;
+            max-width: 820px;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,9 +76,9 @@
     style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
 
         <h1 style="text-align: center;">Reconciling Traditional and Computational Methods for the Analysis of Scribal Hands:<br>
-            The Case of Raoulet d'Orléans and Henri de Trévou<br>
+            The Case of Raoulet d'Orléans and Henri de Trévou (fourteenth century)<br>
             <div class="iwcp" style="display: flex; justify-content: center;">
-                <i>Proceedings of the XXVIth International Congress of Linguists (CIPL 2025)</i> (under review)
+                <i>Proceedings of the XXIIIrd Colloquium of the Comité International de Paléographie Latine (CIPL 2025)</i> (under review)
             </div>
         </h1>
 
@@ -87,7 +141,7 @@
                 <p><b>Figure 1:</b> Handwriting and distinctive catchword/note examples from selected signed manuscripts by Raoulet d'Orléans and Henri de Trévou. © BnF (images in the public domain), KBR Belgium and The Hague, RMMW (images reproduced with permission).</p>
             </div>
 
-            <p style="font-size: 0.95rem; color: #666;"><b>Dataset:</b> 73 folios from 41 manuscripts (signed and attributed), covering the full documented corpus of both scribes. Data available via <a href="https://doi.org/10.5281/zenodo.17183580" target="_blank">Zenodo</a>.</p>
+            <p style="font-size: 0.95rem; color: #666; max-width: 800px;"><b>Dataset:</b> 73 folios from 41 manuscripts (signed and attributed), covering the full documented corpus of both scribes. Data with details on the sampling method available via <a href="https://doi.org/10.5281/zenodo.17183580" target="_blank">Zenodo</a>.</p>
         </div>
 
         <!-- Method -->
@@ -97,7 +151,7 @@
             <div class="para">
                 <p>Character prototypes are extracted using the <a href="https://github.com/malamatenia/learnable-handwriter" target="_blank">Learnable Typewriter</a>, a prototype-based deep-learning model that reconstructs text lines by learning a dictionary of visual character patterns. Each prototype is an optimized average of all occurrences of a given character across a page, normalized for size, position, and intensity — analogous to the idealized reference alphabets used in traditional palaeography, while remaining expressive enough to capture fine-grained morphological variation.</p>
                 <p>Morphological variation across the corpus is then explored through Principal Component Analysis (PCA). Crucially, the principal components are computed <em>exclusively</em> from prototypes learned from signed manuscripts, and attributed samples are projected into this space without influencing its structure — avoiding confirmatory bias. This allows the structure of variation to emerge directly from securely attributed material, against which external samples can be independently evaluated.</p>
-                <p>For a fuller description of the method and its application to a detailed case study of manuscript fr. 2813, see the companion paper: <a href="https://malamatenia.github.io/palaeographic-variability-analysis-grandes-chroniques-fr-2813/" target="_blank">Interpretable Deep Learning for Palaeographic Variability Analysis (Scriptorium, forthcoming)</a>.</p>
+                <p>For a fuller description of the PCA method and its application to a detailed case study, see the companion paper: <a href="https://malamatenia.github.io/palaeographic-variability-analysis-grandes-chroniques-fr-2813/" target="_blank">Interpretable Deep Learning for Palaeographic Variability Analysis (<i>Scriptorium</i>, forthcoming 2026)</a>.</p>
             </div>
         </div>
 
@@ -111,16 +165,17 @@
                 <ul>
                     <li><b>HT9<sub>1</sub></b> (BnF, fr. 24287, fol. 85r), assigned to Henri, plots squarely within Raoulet's region. Closer codicological examination reveals a misidentified hand-change point: the shift from Raoulet to Henri actually occurs at fol. 85v, not fol. 82r as previous scholarship assumed. The model thus independently reproduces a distinction verifiable through codicological evidence.</li>
                     <li><b>HT12</b> (BnF, fr. 437, fol. 228r) occupies the margins of Henri's cluster and within Raoulet's morphological range across multiple letters. It displays an angular upper-bow tip, a pronounced back, and the co-occurrence of two ‹a› allographs in a fused state, aligning with a <i>Quadratus</i> variant. Although initially attributed to Henri, doubts were already raised by Léopold Delisle; some catalogues nonetheless continue this attribution.</li>
+                    <li><b>HT13</b> (BnF, fr. 9749, fol. 22v) is morphologically close to HT12, catalogued as Henri's in the BnF catalogue without supporting argumentation, and consistently deviates from his standard profile across all three letters — inviting renewed scrutiny, particularly in the absence of his characteristic paratextual markers.</li>
                     <li><b>RO16<sub>1</sub></b> (Harvard Library, Typ. 555, vol. I, fol. 5v) lies at the edge of Raoulet's distribution, diverging from the second volume of the same codex (RO16<sub>2</sub>) in both the ‹a› and ‹d› prototypes. These differences support Monica Peretto's contested attribution of the first volume.</li>
-                    <li><b>RO21<sub>3</sub></b> (BnF, fr. 2813, fols 484r–494v), the final section of Charles V's <i>Grandes Chroniques de France</i>, departs from earlier portions through the predominant use of <i>Quadratus</i>-a and pronounced angularity throughout. Despite marked graphic divergence, it has been consistently attributed to Raoulet on contextual and paratextual grounds.</li>
-                    <li><b>RO19</b> (BnF, fr. 22912–13), attributed to Raoulet in the BnF catalogue but rejected by Peretto, clusters near signed samples showing <i>Quadratus</i>-related features (RO5, RO6, RO10). The PCA underscores the limitations of single-character or single-component exclusion criteria for manuscripts in this variant.</li>
+                    <li><b>RO2<sub>2</sub></b> (Belgium, KBR, MS 10319) departs from Raoulet's conventions with a disarticulated lower bow in ‹a›, a fragmented bowl in ‹d›, and a more compact ‹n›. Consistent with Peretto's proposal that the codex was copied by three hands, our results suggest sections 1 and 3 align with Raoulet while section 2 does not.</li>
+                    <li><b>RO22<sub>2</sub></b> (BnF, fr. 12465, fol. 147v), though signed by Raoulet, plots closer to Henri's cluster. The prototype preserves Raoulet's characteristic angular upper bow but shows a more vertically compact form compared to the beginning of the same manuscript (RO22<sub>1</sub>), reflecting internal evolution toward the end of the volume.</li>
                 </ul>
                 <p>Taken together, these cases highlight a recurring tension: manuscripts are sometimes accepted on contextual grounds despite graphic divergence, and rejected despite morphological proximity. This underscores the need to explicitly theorize Raoulet's adoption of <i>Textus Quadratus</i> features as part of his scribal range.</p>
             </div>
 
-            <div class="stack-vertival">
+            <div class="pca-figure">
                 <img src="images/PCA_plot_a.png" alt="PCA plot of the letter a">
-                <p><b>Figure 2:</b> PCA plot of the letter ‹a›. Outliers per scribe (blue for Henri de Trévou, red for Raoulet d'Orléans) are highlighted and displayed with colored borders. Signed samples are shown as filled circles; attributed samples projected off-PCA are shown as ×.</p>
+                <p><b>Figure 2:</b> PCA plot of the letter ‹a›. Signed samples are shown as filled circles; attributed samples projected off-PCA are shown as ×. Outliers per scribe (circled in blue for Henri de Trévou, and in red for Raoulet d'Orléans) are highlighted in the graph.</p>
             </div>
         </div>
 
@@ -128,12 +183,12 @@
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <h2>References</h2>
-            <p>
+            <ul style="max-width: 800px; width: 100%; list-style-type: disc; padding-left: 1.5rem;">
                 <li>Wolfgang Oeser, « Raoulet d'Orléans und Henri du Trévou, zwei französische Berufschreiber des 14. Jahrhunderts und ihre Schrift », <i>Archiv für Diplomatik</i>, 42, Köln, Böhlau, 1996, p. 395–418.</li>
                 <li>Monica Peretto, <i>Raoulet d'Orléans e la copia di manoscritti a Parigi nella seconda metà del XIV secolo</i>, Doctoral dissertation, Università Ca' Foscari Venezia, 2014.</li>
-                <li>Ioannis Siglidis et al., « The Learnable Typewriter: A Generative Approach to Text Analysis », <i>Lecture Notes in Computer Science, ICDAR 2024</i>, Part II (2024), p. 297–314.</li>
-                <li>Malamatenia Vlachou-Efstathiou, « Interpretable Deep Learning for Palaeographic Variability Analysis; revisiting the scribal hands of Charles V's Grandes Chroniques de France (BnF, fr. 2813) », <i>Scriptorium</i> (forthcoming).</li>
-            </p>
+                <li>Richard H. Rouse &amp; Mary A. Rouse, <i>Manuscripts and their Makers: Commercial Book Producers in Medieval Paris, 1200–1500</i>, London: Harvey Miller, 2000, vol. 1 &amp; 2.</li>
+                <li>François Avril, « La Bible historiale de Charles V », in <i>The Marks in the Fields: Essays on the Uses of Manuscripts</i>, Cambridge, MA: Houghton Library, Harvard University, 1992.</li>
+            </ul>
         </div>
 
         <!-- BibTeX -->
@@ -147,8 +202,8 @@
         Analysis of Scribal Hands: The Case of Raoulet d'Orléans
         and Henri de Trévou},
     author = {Vlachou-Efstathiou, Malamatenia},
-    booktitle = {Proceedings of the XXVIth International Congress
-        of Linguists (CIPL 2025)},
+    booktitle = {Proceedings of the XXIIIrd Colloquium of the Comité
+        International de Paléographie Latine (CIPL 2025)},
     note = {under review},
     year = {2027},
     url = {}
@@ -161,7 +216,7 @@
             style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <h2>Acknowledgements</h2>
             <div class="para">
-                <p>This study was supported by the CNRS through MITI and the 80|Prime program (CrEMe — Caractérisation des écritures médiévales), and by the European Research Council (ERC project DISCOVER, number 101076028). I would like to express my deepest gratitude to my advisors, Prof. Dr. Dominique Stutzmann (IRHT-CNRS) and Prof. Dr. Mathieu Aubry (IMAGINE-ENPC), for their guidance, feedback, and continuous support.</p>
+                <p>This study was supported by the CNRS through MITI and the 80|Prime program (CrEMe — Caractérisation des écritures médiévales), and by the European Research Council (ERC project DISCOVER, number 101076028).</p>
             </div>
         </div>
 
