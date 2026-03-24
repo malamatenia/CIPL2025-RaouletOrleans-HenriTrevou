@@ -131,15 +131,15 @@
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
             <h2>Case Study: Henri de Trévou and Raoulet d'Orléans</h2>
+            <div class="stack-vertival">
+                <img src="images/Raoulet_Henri_samples.png" alt="Handwriting samples from Raoulet d'Orléans and Henri de Trévou">
+                <p><b>Figure 1:</b> Handwriting and distinctive catchword/note examples from selected signed manuscripts by Raoulet d'Orléans and Henri de Trévou. © BnF (images in the public domain), KBR Belgium and The Hague, RMMW (images reproduced with permission).</p>
+            </div>
             <div class="para">
                 <p>Henri de Trévou and Raoulet d'Orléans are among the most prominent <i>écrivains du roi</i> active under Charles V during the last quarter of the fourteenth century. Both scribes primarily employ the late fourteenth-century <i>Textualis Formata</i>, yet display identifiable differences in execution. Henri's handwriting corresponds to a small, early form of <i>Textus Rotundus</i>, showing a high degree of consistency in letter morphology. Raoulet's preferred script corresponds to a stylized <i>Semirotundus</i>, yet his letterforms oscillate between features associated with <i>Quadratus</i> and <i>Rotundus</i> norms — a constitutive rather than incidental trait that complicates secure attribution of unsigned manuscripts.</p>
                 <p>The central methodological challenge lies in distinguishing the unique features of an individual hand from graphic traits reflecting shared training, milieu, or temporal evolution. This is especially acute for Raoulet, whose fluid adherence to script norms — and role as a <i>libraire</i> overseeing collective production — blurs the boundary between individual and contextual graphical features.</p>
             </div>
 
-            <div class="stack-vertival">
-                <img src="images/Raoulet_Henri_samples.png" alt="Handwriting samples from Raoulet d'Orléans and Henri de Trévou">
-                <p><b>Figure 1:</b> Handwriting and distinctive catchword/note examples from selected signed manuscripts by Raoulet d'Orléans and Henri de Trévou. © BnF (images in the public domain), KBR Belgium and The Hague, RMMW (images reproduced with permission).</p>
-            </div>
 
             <p style="font-size: 0.95rem; color: #666; max-width: 800px;"><b>Dataset:</b> 73 folios from 41 manuscripts (signed and attributed), covering the full documented corpus of both scribes. Data with details on the sampling method available via <a href="https://doi.org/10.5281/zenodo.17183580" target="_blank">Zenodo</a>.</p>
         </div>
@@ -158,24 +158,23 @@
         <!-- Outlier Analysis -->
         <div class="Method"
         style="display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <div class="pca-figure">
+            <img src="images/PCA_plot_a.png" alt="PCA plot of the letter a">
+            <p><b>Figure 2:</b> PCA plot of the letter ‹a›. Signed samples are shown as filled circles; attributed samples projected off-PCA are shown as ×. Outliers per scribe (circled in blue for Henri de Trévou, and in red for Raoulet d'Orléans) are highlighted in the graph.</p>
+         </div>
             <h2>Outlier Analysis: the letter ‹a›</h2>
             <div class="para">
                 <p>The PCA of the letter ‹a› (PC1 ~27% of variance) captures a morphological continuum from compact, rounded forms to vertically elongated letterforms with an angular upper bow — reflecting the co-occurrence of the two-compartment allographs box-a and <i>Quadratus</i>-a. Henri's prototypes occupy a compact, stable region; Raoulet's are markedly more dispersed, with PC2 (~19%) capturing internal diversity in the lower bow and upper compartment shape.</p>
                 <p>Several prototypes fall outside or at the margins of their expected cluster, revealing both internal scribal evolution and inconsistencies in the attribution literature:</p>
                 <ul>
-                    <li><b>HT9<sub>1</sub></b> (BnF, fr. 24287, fol. 85r), assigned to Henri, plots squarely within Raoulet's region. Closer codicological examination reveals a misidentified hand-change point: the shift from Raoulet to Henri actually occurs at fol. 85v, not fol. 82r as previous scholarship assumed. The model thus independently reproduces a distinction verifiable through codicological evidence.</li>
-                    <li><b>HT12</b> (BnF, fr. 437, fol. 228r) occupies the margins of Henri's cluster and within Raoulet's morphological range across multiple letters. It displays an angular upper-bow tip, a pronounced back, and the co-occurrence of two ‹a› allographs in a fused state, aligning with a <i>Quadratus</i> variant. Although initially attributed to Henri, doubts were already raised by Léopold Delisle; some catalogues nonetheless continue this attribution.</li>
-                    <li><b>HT13</b> (BnF, fr. 9749, fol. 22v) is morphologically close to HT12, catalogued as Henri's in the BnF catalogue without supporting argumentation, and consistently deviates from his standard profile across all three letters — inviting renewed scrutiny, particularly in the absence of his characteristic paratextual markers.</li>
-                    <li><b>RO16<sub>1</sub></b> (Harvard Library, Typ. 555, vol. I, fol. 5v) lies at the edge of Raoulet's distribution, diverging from the second volume of the same codex (RO16<sub>2</sub>) in both the ‹a› and ‹d› prototypes. These differences support Monica Peretto's contested attribution of the first volume.</li>
-                    <li><b>RO2<sub>2</sub></b> (Belgium, KBR, MS 10319) departs from Raoulet's conventions with a disarticulated lower bow in ‹a›, a fragmented bowl in ‹d›, and a more compact ‹n›. Consistent with Peretto's proposal that the codex was copied by three hands, our results suggest sections 1 and 3 align with Raoulet while section 2 does not.</li>
-                    <li><b>RO22<sub>2</sub></b> (BnF, fr. 12465, fol. 147v), though signed by Raoulet, plots closer to Henri's cluster. The prototype preserves Raoulet's characteristic angular upper bow but shows a more vertically compact form compared to the beginning of the same manuscript (RO22<sub>1</sub>), reflecting internal evolution toward the end of the volume.</li>
+                    <li><b>HT9<sub>1</sub></b> (BnF, fr. 24287, fol. 85r): Closer codicological examination reveals a misidentified hand-change point: the shift from Raoulet to Henri actually occurs at fol. 85v, not fol. 82r as previous scholarship assumed. The model thus independently reproduces a distinction verifiable through codicological evidence.</li>
+                    <li><b>HT12</b> (BnF, fr. 437, fol. 228r) displays an angular upper-bow tip, a pronounced back, and the co-occurrence of two ‹a› allographs in a fused state, aligning with a <i>Quadratus</i> variant. Although doubts were already raised by Léopold Delisle on its attribution status, some catalogues nonetheless maintain this attribution.</li>
+                    <li><b>HT13</b> (BnF, fr. 9749, fol. 22v) is morphologically close to HT12, catalogued as Henri's in the  <a href="https://archivesetmanuscrits.bnf.fr/ark:/12148/cc78178h" target="_blank">BnF catalogue</a> without supporting argumentation, and consistently deviates from his standard profile across letters — inviting renewed study and attribution, particularly in the absence of Henri's characteristic paratextual markers.</li>
+                    <li><b>RO16<sub>1</sub></b> (Harvard Library, Typ. 555, vol. I, fol. 5v) diverges significantly from the second volume of the same codex (RO16<sub>2</sub>). These differences support Monica Peretto's doubts on the attribution of the first volume to Raoulet.</li>
+                    <li><b>RO2<sub>2</sub></b> (Belgium, KBR, MS 10319) departs from Raoulet's conventions with a disarticulated lower bow in ‹a›. Moica Peretto proposes that the codex was copied by three distinct hands, a hypothesis partially supported by our results.</li>
+                    <li><b>RO22<sub>2</sub></b> (BnF, fr. 12465, fol. 147v): The prototype, coming from a signed manuscript, preserves Raoulet's characteristic angular upper bow but shows a more vertically compact form compared to the beginning of the same manuscript (RO22<sub>1</sub>), reflecting internal evolution toward the end of the volume.</li>
                 </ul>
-                <p>Taken together, these cases highlight a recurring tension: manuscripts are sometimes accepted on contextual grounds despite graphic divergence, and rejected despite morphological proximity. This underscores the need to explicitly theorize Raoulet's adoption of <i>Textus Quadratus</i> features as part of his scribal range.</p>
-            </div>
-
-            <div class="pca-figure">
-                <img src="images/PCA_plot_a.png" alt="PCA plot of the letter a">
-                <p><b>Figure 2:</b> PCA plot of the letter ‹a›. Signed samples are shown as filled circles; attributed samples projected off-PCA are shown as ×. Outliers per scribe (circled in blue for Henri de Trévou, and in red for Raoulet d'Orléans) are highlighted in the graph.</p>
+                <p>Taken together, these cases highlight the need for more explicit and systematically argued criteria for scribal attribution in cases of graphic variability, and how prototype-based methods can assist in this process.</p>
             </div>
         </div>
 
