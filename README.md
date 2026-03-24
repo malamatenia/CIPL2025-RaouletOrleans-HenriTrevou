@@ -7,5 +7,5 @@
 </h2>
 
 <p align="center">
-  <em>Proceedings of the 23rd CIPL, Vienna 2025</em>
+  <em>Proceedings of the 23rd CIPL, Vienna 2025 (under review)</em>
 </p>
